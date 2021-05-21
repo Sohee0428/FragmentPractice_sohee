@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.fragmentpractice_sohee.R
+import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
 
@@ -15,6 +16,18 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_first, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        changeTextBtn.setOnClickListener {
+
+//            임시로 -> 텍스트뷰 문구를 "안녕하세요."로 변경
+            contextTxt.text = "안녕하세요."
+
+        }
+
     }
 
 
